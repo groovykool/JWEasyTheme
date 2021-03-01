@@ -5,12 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d"
-      Loaded="Page_Loaded"
-      RequestedTheme="Default"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Page.Resources>
-        <SolidColorBrush x:Key="MySystemAltHighColorBrush"
-                         Color="{ThemeResource SystemAltHighColor}" />
         <SolidColorBrush x:Key="Brush1"
                          Color="{ThemeResource SystemListAccentLowColor}" />
         <SolidColorBrush x:Key="Brush2"
@@ -24,7 +20,7 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <ComboBox x:Name="CB1"
-                      Header="Application Theme"
+                      Header="Frame Theme"
                       Margin="20"
                       SelectedIndex="0"
                       SelectionChanged="CB1_SelectionChanged">
@@ -33,16 +29,18 @@
                 <x:String>Dark</x:String>
 
             </ComboBox>
-            <Button x:Name="B1"
-                    Margin="20"
-                    Content="G1 Theme"
-                    Click="B1_Click" />
-            <Button x:Name="B2"
-                    Margin="20"
-                    Content="G2 Theme"
-                    Click="B2_Click" />
+            <ComboBox x:Name="CB2"
+                      Header="G2 Theme"
+                      Margin="20"
+                      SelectedIndex="0"
+                      SelectionChanged="CB2_SelectionChanged">
+                <x:String>Default</x:String>
+                <x:String>Light</x:String>
+                <x:String>Dark</x:String>
+
+            </ComboBox>
         </StackPanel>
-        <Grid Grid.Row="2"
+        <Grid Grid.Row="1"
               BorderBrush="Gold"
               BorderThickness="2">
             <Grid.ColumnDefinitions>
@@ -50,27 +48,41 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <Grid x:Name="g1"
+            <Grid x:Name="G1"
                   Background="Red"
                   Margin="8"
                   Grid.Column="0"
                   HorizontalAlignment="Stretch">
-                <TextBlock Text="This is Test Text" />
+                <TextBlock FontSize="20"
+                           FontWeight="ExtraBold"
+                           TextWrapping="Wrap"
+                           Margin="12"
+                           Text="The Background should always be red and the text should follow the FRAME Theme" />
             </Grid>
-            <Grid x:Name="g2"
+            <Grid x:Name="G2"
                   RequestedTheme="Light"
                   Grid.Column="1">
-                <Canvas Grid.Column="1"
+                <Grid Grid.Column="1"
                       Background="{ThemeResource Brush1}"
                       Margin="8">
-                    <TextBlock Text="This is Test Text" />
-                </Canvas>
+                    <TextBlock  FontSize="20"
+                                FontWeight="ExtraBold"
+                                TextWrapping="Wrap"
+                                Margin="12"
+                                Text="The Background and the text should follow the G2 Theme" />
+                </Grid>
             </Grid>
-            <Grid RequestedTheme="Default"
+            <Grid RequestedTheme="Light"
                   Margin="8"
                   Grid.Column="2"
                   HorizontalAlignment="Stretch"
-                  Background="{ThemeResource Brush2}" />
+                  Background="{ThemeResource Brush2}">
+                <TextBlock  FontSize="20"
+                            FontWeight="ExtraBold"
+                            TextWrapping="Wrap"
+                            Margin="12"
+                            Text="The Background and the text should always be LIGHT Theme" />
+            </Grid>
         </Grid>
     </Grid>
 </Page>

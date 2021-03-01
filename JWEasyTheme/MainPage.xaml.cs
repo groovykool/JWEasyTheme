@@ -27,25 +27,13 @@ namespace JWEasyTheme
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page, INotifyPropertyChanged
+    public sealed partial class MainPage : Page
     {
-       
-        private SolidColorBrush testbrush;
-        public SolidColorBrush TestBrush
-        {
-            get { return testbrush; }
-            set { Set(ref testbrush, value, "TestBrush"); }
-        }
-
         public MainPage()
         {
             this.InitializeComponent();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-      
-        }
         public static async Task SetRequestedThemeAsync(string themename)
         {
             ElementTheme Theme = ElementTheme.Default;
@@ -69,10 +57,30 @@ namespace JWEasyTheme
                     if (Window.Current.Content is FrameworkElement frameworkElement)
                     {
                         frameworkElement.RequestedTheme = Theme;
-                        //SetTitleColors();
                     }
                 });
             }
+        }
+        public static async Task SetRequestedThemeAsync(string themename, Grid gd)
+        {
+            ElementTheme Theme = ElementTheme.Default;
+            switch (themename)
+            {
+                case "Light":
+                    Theme = ElementTheme.Light;
+                    break;
+                case "Dark":
+                    Theme = ElementTheme.Dark;
+                    break;
+                case "Default":
+                    Theme = ElementTheme.Default;
+                    break;
+
+            }
+            await gd.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                gd.RequestedTheme = Theme;
+            });
         }
 
         private async void CB1_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -89,56 +97,28 @@ namespace JWEasyTheme
                 case 2:
                     await SetRequestedThemeAsync("Dark");
                     break;
-
             }
         }
-        private void B1_Click(object sender, RoutedEventArgs e)
+        private async void CB2_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            switch (g1.RequestedTheme)
+            if (G2 != null && G2.IsLoaded)
             {
-                case ElementTheme.Default:
-                    g1.RequestedTheme = ElementTheme.Light;
-                    break;
-                case ElementTheme.Light:
-                    g1.RequestedTheme = ElementTheme.Dark;
-                    break;
-                case ElementTheme.Dark:
-                    g1.RequestedTheme = ElementTheme.Default;
-                    break;
-              
+                var selection = CB2.SelectedIndex;
+                switch (selection)
+                {
+                    case 0:
+                        await SetRequestedThemeAsync("Default", G2);
+                        break;
+                    case 1:
+                        await SetRequestedThemeAsync("Light", G2);
+                        break;
+                    case 2:
+                        await SetRequestedThemeAsync("Dark", G2);
+                        break;
+                }
             }
 
         }
-        private void B2_Click(object sender, RoutedEventArgs e)
-        {
-            switch (g2.RequestedTheme)
-            {
-                case ElementTheme.Default:
-                    g2.RequestedTheme = ElementTheme.Light;
-                    break;
-                case ElementTheme.Light:
-                    g2.RequestedTheme = ElementTheme.Dark;
-                    break;
-                case ElementTheme.Dark:
-                    g2.RequestedTheme = ElementTheme.Default;
-                    break;
 
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void Set<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
-        {
-            if (Equals(storage, value))
-            {
-                return;
-            }
-
-            storage = value;
-            OnPropertyChanged(propertyName);
-        }
-
-        private void OnPropertyChanged(string propertyName) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }
