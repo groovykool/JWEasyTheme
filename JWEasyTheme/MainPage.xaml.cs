@@ -61,7 +61,7 @@ namespace JWEasyTheme
                 });
             }
         }
-        public static async Task SetRequestedThemeAsync(string themename, Grid gd)
+        public static async Task SetRequestedThemeAsync(string themename, FrameworkElement fe)
         {
             ElementTheme Theme = ElementTheme.Default;
             switch (themename)
@@ -77,9 +77,9 @@ namespace JWEasyTheme
                     break;
 
             }
-            await gd.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            await fe.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
-                gd.RequestedTheme = Theme;
+                fe.RequestedTheme = Theme;
             });
         }
 
@@ -117,8 +117,26 @@ namespace JWEasyTheme
                         break;
                 }
             }
-
         }
 
+        private async void CB3_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (MP != null && MP.IsLoaded)
+            {
+                var selection = CB3.SelectedIndex;
+                switch (selection)
+                {
+                    case 0:
+                        await SetRequestedThemeAsync("Default", MP);
+                        break;
+                    case 1:
+                        await SetRequestedThemeAsync("Light", MP);
+                        break;
+                    case 2:
+                        await SetRequestedThemeAsync("Dark", MP);
+                        break;
+                }
+            }
+        }
     }
 }
