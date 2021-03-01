@@ -138,5 +138,26 @@ namespace JWEasyTheme
                 }
             }
         }
+
+        private async void CB4_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            if (BaseGrid != null && BaseGrid.IsLoaded)
+            {
+                var selection = CB4.SelectedIndex;
+                switch (selection)
+                {
+                    case 0:
+                        await SetRequestedThemeAsync("Default", BaseGrid);
+                        break;
+                    case 1:
+                        await SetRequestedThemeAsync("Light", BaseGrid);
+                        break;
+                    case 2:
+                        await SetRequestedThemeAsync("Dark", BaseGrid);
+                        break;
+                }
+            }
+        }
     }
 }

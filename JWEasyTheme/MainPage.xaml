@@ -13,7 +13,7 @@
         <SolidColorBrush x:Key="Brush2"
                          Color="{ThemeResource SystemListAccentLowColor}" />
     </Page.Resources>
-    <Grid>
+    <Grid x:Name="BaseGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -34,6 +34,15 @@
                       Margin="20"
                       SelectedIndex="0"
                       SelectionChanged="CB3_SelectionChanged">
+                <x:String>Default</x:String>
+                <x:String>Light</x:String>
+                <x:String>Dark</x:String>
+            </ComboBox>
+            <ComboBox x:Name="CB4"
+                      Header="BaseGrid Theme"
+                      Margin="20"
+                      SelectedIndex="0"
+                      SelectionChanged="CB4_SelectionChanged">
                 <x:String>Default</x:String>
                 <x:String>Light</x:String>
                 <x:String>Dark</x:String>
@@ -79,9 +88,9 @@
                                 Text="The Background and the text should follow the G2 Theme" />
                 </Grid>
             </Grid>
-            <Grid RequestedTheme="Light"
-                  Margin="8"
+            <StackPanel Margin="8" Orientation="Vertical"
                   Grid.Column="2"
+                        RequestedTheme="Light"
                   HorizontalAlignment="Stretch"
                   Background="{ThemeResource Brush2}">
                 <TextBlock  FontSize="20"
@@ -89,7 +98,7 @@
                             TextWrapping="Wrap"
                             Margin="12"
                             Text="The Background and the text should always be LIGHT Theme" />
-            </Grid>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>
