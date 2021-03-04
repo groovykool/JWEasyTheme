@@ -4,13 +4,17 @@
                     xmlns:c="using:JWEasyTheme.Controls">
 
     <Style TargetType="c:BetterGrid">
+        <Setter Property="Background"
+                Value="{ThemeResource SystemControlHighlightChromeHighBrush}"></Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="c:BetterGrid">
                     <Grid 
+                        x:Name="BaseG"
                           Background="{TemplateBinding Background}"
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="{TemplateBinding BorderThickness}">
+                         
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

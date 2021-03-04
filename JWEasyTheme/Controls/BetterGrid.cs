@@ -30,7 +30,7 @@ namespace JWEasyTheme.Controls
         }
         public BetterGrid()
         {
-            this.DefaultStyleKey = typeof(BetterGrid);               
+            this.DefaultStyleKey = typeof(BetterGrid);
         }     
     }
 }
