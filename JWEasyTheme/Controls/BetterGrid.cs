@@ -21,22 +21,30 @@ namespace JWEasyTheme.Controls
           nameof(Children),
           typeof(UIElementCollection),
           typeof(BetterGrid),
-          new PropertyMetadata(default));
+          new PropertyMetadata(null));
 
         public UIElementCollection Children
         {
             get { return (UIElementCollection)GetValue(ChildrenProperty); }
-            private set { SetValue(ChildrenProperty, value); }
+            set { SetValue(ChildrenProperty, value); }
         }
         public BetterGrid()
         {
             this.DefaultStyleKey = typeof(BetterGrid);
+            var gg = new Grid();
+            Children = gg.Children;
         }
 
         protected override void OnApplyTemplate()
         {
             if (GetTemplateChild("BaseG") is Grid gd)
             {
+                var clist = Children.ToList();
+                Children.Clear();
+                foreach (var item in clist)
+                { 
+                    gd.Children.Add(item);
+                }
                 Children = gd.Children;
             }
         }

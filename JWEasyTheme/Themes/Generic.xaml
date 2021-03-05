@@ -13,6 +13,7 @@
                           Background="{TemplateBinding Background}"
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="{TemplateBinding BorderThickness}">
+                        
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

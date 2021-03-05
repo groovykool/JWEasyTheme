@@ -89,11 +89,13 @@
                             Text="The Background and the text should follow the G2 Theme" />
             </Grid>
             <c:BetterGrid x:Name="G2"
-                Grid.Column="2"
-                          Margin="8"
-                          >
-               
-
+                          Grid.Column="2"
+                          Margin="8">
+                <TextBlock  FontSize="20"
+                            FontWeight="ExtraBold"
+                            TextWrapping="Wrap"
+                            Margin="12"
+                            Text="The Background and the text should follow the G2 Theme" />
             </c:BetterGrid>
         </Grid>
     </Grid>
