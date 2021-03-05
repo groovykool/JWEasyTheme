@@ -17,22 +17,22 @@ namespace JWEasyTheme.Controls
     [ContentProperty(Name = "Children")]
     public sealed class BetterGrid : Control
     {
+        static Grid dummygrid = new Grid();
+
         public static readonly DependencyProperty ChildrenProperty = DependencyProperty.Register(
           nameof(Children),
           typeof(UIElementCollection),
           typeof(BetterGrid),
-          new PropertyMetadata(null));
+          new PropertyMetadata(dummygrid.Children));
 
         public UIElementCollection Children
         {
             get { return (UIElementCollection)GetValue(ChildrenProperty); }
-            set { SetValue(ChildrenProperty, value); }
+            private set { SetValue(ChildrenProperty, value); }
         }
         public BetterGrid()
         {
-            this.DefaultStyleKey = typeof(BetterGrid);
-            var gg = new Grid();
-            Children = gg.Children;
+            this.DefaultStyleKey = typeof(BetterGrid);          
         }
 
         protected override void OnApplyTemplate()
@@ -42,10 +42,11 @@ namespace JWEasyTheme.Controls
                 var clist = Children.ToList();
                 Children.Clear();
                 foreach (var item in clist)
-                { 
+                {
                     gd.Children.Add(item);
                 }
                 Children = gd.Children;
+                dummygrid = null;
             }
         }
     }

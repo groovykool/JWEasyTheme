@@ -96,6 +96,12 @@
                             TextWrapping="Wrap"
                             Margin="12"
                             Text="The Background and the text should follow the G2 Theme" />
+                <TextBlock  FontSize="20"
+                            FontWeight="ExtraBold"
+                            TextWrapping="Wrap"
+                            Margin="100"
+                            Text="Test2" />
+                <Grid />
             </c:BetterGrid>
         </Grid>
     </Grid>
