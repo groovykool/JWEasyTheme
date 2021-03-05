@@ -107,6 +107,8 @@ namespace JWEasyTheme
                 {
                     case 0:
                         await SetRequestedThemeAsync("Default", G2);
+                        var brsh = (SolidColorBrush)this.Resources["Brush1"];
+                        G2.Children.Add(new Grid() {Background=brsh });
                         break;
                     case 1:
                         await SetRequestedThemeAsync("Light", G2);

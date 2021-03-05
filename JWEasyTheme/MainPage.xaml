@@ -12,7 +12,7 @@
                          Color="{ThemeResource SystemListAccentLowColor}" />
         <SolidColorBrush x:Key="Brush2"
                          Color="{ThemeResource SystemListAccentLowColor}" />
-       
+
     </Page.Resources>
     <Grid x:Name="BaseGrid">
         <Grid.RowDefinitions>
@@ -78,7 +78,7 @@
                            Text="The Background should always be red and the text should follow the FRAME Theme" />
             </Grid>
 
-            <Grid x:Name="G2"
+            <Grid x:Name="G23"
                   Grid.Column="1"
                   Background="{ThemeResource Brush1}">
 
@@ -88,10 +88,12 @@
                             Margin="12"
                             Text="The Background and the text should follow the G2 Theme" />
             </Grid>
-            <c:BetterGrid Grid.Column="2"
+            <c:BetterGrid x:Name="G2"
+                Grid.Column="2"
                           Margin="8"
-                          Background="{ThemeResource Brush1}">
-                
+                          >
+               
+
             </c:BetterGrid>
         </Grid>
     </Grid>

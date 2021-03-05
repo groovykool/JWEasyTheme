@@ -31,6 +31,14 @@ namespace JWEasyTheme.Controls
         public BetterGrid()
         {
             this.DefaultStyleKey = typeof(BetterGrid);
-        }     
+        }
+
+        protected override void OnApplyTemplate()
+        {
+            if (GetTemplateChild("BaseG") is Grid gd)
+            {
+                Children = gd.Children;
+            }
+        }
     }
 }
