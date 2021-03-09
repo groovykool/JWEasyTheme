@@ -38,19 +38,19 @@ namespace JWEasyTheme
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            //var resd = Application.Current.Resources.MergedDictionaries.ElementAt(1);
-            //ColorTheme CTheme;
-            //var lst = resd.Keys.ToList();
-            //foreach (var item in lst)
-            //{
-            //    CTheme = new ColorTheme()
-            //    {
-            //        TName = item.ToString(),
-            //        SCBrush = (SolidColorBrush)this.Resources[item.ToString()]
-            //    };
-            //    Source.Add(CTheme);
-            //}
-            //TList.ItemsSource = Source;
+            var resd = this.Resources.MergedDictionaries.ElementAt(0);
+            ColorTheme CTheme;
+            var lst = resd.Keys.ToList();
+            foreach (var item in lst)
+            {
+                CTheme = new ColorTheme()
+                {
+                    TName = item.ToString(),
+                    SCBrush = (SolidColorBrush)this.Resources[item.ToString()]
+                };
+                Source.Add(CTheme);
+            }
+            TList.ItemsSource = Source;
         }
     }
 }

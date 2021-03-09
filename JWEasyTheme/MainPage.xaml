@@ -9,6 +9,14 @@
     xmlns:Models="using:JWEasyTheme.Models"
     xmlns:local="using:JWEasyTheme"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="ms-appx:///Themes/Brushes.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid
         x:Name="BaseGrid">
         <ListView
@@ -64,7 +72,7 @@
                             Grid.Column="0"
                             Text="{x:Bind TName,Mode=OneTime}"
                             Margin="12" />
-                        <Grid
+                        <local:Wrap
                             RequestedTheme="Default"
                             Grid.Column="1"
                             Margin="4">
@@ -76,8 +84,8 @@
                                     FontSize="16"
                                     Margin="12" />
                             </Grid>
-                        </Grid>
-                        <Grid
+                        </local:Wrap>
+                        <local:Wrap
                             RequestedTheme="Light"
                             Grid.Column="2"
                             Margin="4">
@@ -89,8 +97,8 @@
                                     FontSize="16"
                                     Margin="12" />
                             </Grid>
-                        </Grid>
-                        <Grid
+                        </local:Wrap>
+                        <local:Wrap
                             RequestedTheme="Dark"
                             Grid.Column="3"
                             Margin="4">
@@ -102,7 +110,7 @@
                                     FontSize="16"
                                     Margin="12" />
                             </Grid>
-                        </Grid>
+                        </local:Wrap>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
