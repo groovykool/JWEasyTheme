@@ -1,108 +1,111 @@
-﻿<Page x:Class="JWEasyTheme.MainPage"
-      x:Name="MP"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:c="using:JWEasyTheme.Controls"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      mc:Ignorable="d"
-      Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Page.Resources>
-        <SolidColorBrush x:Key="Brush1"
-                         Color="{ThemeResource SystemListAccentLowColor}" />
-        <SolidColorBrush x:Key="Brush2"
-                         Color="{ThemeResource SystemListAccentLowColor}" />
-
-    </Page.Resources>
-    <Grid x:Name="BaseGrid">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
-            <ComboBox x:Name="CB1"
-                      Header="Frame Theme"
-                      Margin="20"
-                      SelectedIndex="0"
-                      SelectionChanged="CB1_SelectionChanged">
-                <x:String>Default</x:String>
-                <x:String>Light</x:String>
-                <x:String>Dark</x:String>
-            </ComboBox>
-            <ComboBox x:Name="CB3"
-                      Header="Page Theme"
-                      Margin="20"
-                      SelectedIndex="0"
-                      SelectionChanged="CB3_SelectionChanged">
-                <x:String>Default</x:String>
-                <x:String>Light</x:String>
-                <x:String>Dark</x:String>
-            </ComboBox>
-            <ComboBox x:Name="CB4"
-                      Header="BaseGrid Theme"
-                      Margin="20"
-                      SelectedIndex="0"
-                      SelectionChanged="CB4_SelectionChanged">
-                <x:String>Default</x:String>
-                <x:String>Light</x:String>
-                <x:String>Dark</x:String>
-            </ComboBox>
-            <ComboBox x:Name="CB2"
-                      Header="Grid 2 Theme"
-                      Margin="20"
-                      SelectedIndex="0"
-                      SelectionChanged="CB2_SelectionChanged">
-                <x:String>Default</x:String>
-                <x:String>Light</x:String>
-                <x:String>Dark</x:String>
-            </ComboBox>
-        </StackPanel>
-        <Grid Grid.Row="1"
-              BorderBrush="Gold"
-              BorderThickness="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Grid x:Name="G1"
-                  Background="Red"
-                  Margin="8"
-                  Grid.Column="0"
-                  HorizontalAlignment="Stretch">
-                <TextBlock FontSize="20"
-                           FontWeight="ExtraBold"
-                           TextWrapping="Wrap"
-                           Margin="12"
-                           Text="The Background should always be red and the text should follow the FRAME Theme" />
-            </Grid>
-
-            <Grid x:Name="G23"
-                  Grid.Column="1"
-                  Background="{ThemeResource Brush1}">
-
-                <TextBlock  FontSize="20"
-                            FontWeight="ExtraBold"
-                            TextWrapping="Wrap"
-                            Margin="12"
-                            Text="The Background and the text should follow the G2 Theme" />
-            </Grid>
-            <c:BetterGrid x:Name="G2"
-                          Grid.Column="2"
-                          Margin="8">
-                <TextBlock  FontSize="20"
-                            FontWeight="ExtraBold"
-                            TextWrapping="Wrap"
-                            Margin="12"
-                            Text="The Background and the text should follow the G2 Theme" />
-                <TextBlock  FontSize="20"
-                            FontWeight="ExtraBold"
-                            TextWrapping="Wrap"
-                            Margin="100"
-                            Text="Test2" />
-                <Grid />
-            </c:BetterGrid>
-        </Grid>
+﻿<Page
+    x:Class="JWEasyTheme.MainPage"
+    x:Name="MP"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:Models="using:JWEasyTheme.Models"
+    xmlns:local="using:JWEasyTheme"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid
+        x:Name="BaseGrid">
+        <ListView
+            x:Name="TList"
+            Grid.Row="2"
+            Grid.RowSpan="5"
+            Header="UWP Theme Brushes"
+            MinHeight="40"
+            CornerRadius="8"
+            Margin="4,8,4,4">
+            <ListView.ItemContainerStyle>
+                <Style
+                    TargetType="ListViewItem">
+                    <Setter
+                        Property="HorizontalAlignment"
+                        Value="Stretch" />
+                    <Setter
+                        Property="HorizontalContentAlignment"
+                        Value="Stretch" />
+                    <Setter
+                        Property="Padding"
+                        Value="0" />
+                    <Setter
+                        Property="MinHeight"
+                        Value="40" />
+                    <Setter
+                        Property="CornerRadius"
+                        Value="8" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate
+                    x:Name="TwoLineDataTemplate"
+                    x:DataType="Models:ColorTheme">
+                    <Grid
+                        MinHeight="20"
+                        Padding="8,4,8,4"
+                        Margin="0,4,20,4"
+                        BorderBrush="Gray"
+                        BorderThickness="1"
+                        CornerRadius="8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+                                Width="300" />
+                            <ColumnDefinition
+                                Width="*" />
+                            <ColumnDefinition
+                                Width="*" />
+                            <ColumnDefinition
+                                Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            Grid.Column="0"
+                            Text="{x:Bind TName,Mode=OneTime}"
+                            Margin="12" />
+                        <Grid
+                            RequestedTheme="Default"
+                            Grid.Column="1"
+                            Margin="4">
+                            <Grid
+                                Background="{x:Bind SCBrush,Mode=OneTime}">
+                                <TextBlock
+                                    Grid.Column="0"
+                                    Text="Default"
+                                    FontSize="16"
+                                    Margin="12" />
+                            </Grid>
+                        </Grid>
+                        <Grid
+                            RequestedTheme="Light"
+                            Grid.Column="2"
+                            Margin="4">
+                            <Grid
+                                Background="{x:Bind SCBrush,Mode=OneTime}">
+                                <TextBlock
+                                    Grid.Column="0"
+                                    Text="Light"
+                                    FontSize="16"
+                                    Margin="12" />
+                            </Grid>
+                        </Grid>
+                        <Grid
+                            RequestedTheme="Dark"
+                            Grid.Column="3"
+                            Margin="4">
+                            <Grid
+                                Background="{x:Bind SCBrush,Mode=OneTime}">
+                                <TextBlock
+                                    Grid.Column="0"
+                                    Text="Dark"
+                                    FontSize="16"
+                                    Margin="12" />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

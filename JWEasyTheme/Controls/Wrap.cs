@@ -10,35 +10,43 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Markup;
 using Windows.UI.Xaml.Media;
 
-// The Templated Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234235
 
-namespace JWEasyTheme.Controls
+
+namespace JWEasyTheme
 {
+    //Wrapper Control to allow Changing RequestedTheme at the Grid level
+    //RequestedTheme is only applied if the FrameworkElement has a Template.  So Wrap adds a Template to wrap
+    //around grids or other panels.
     [ContentProperty(Name = "Children")]
-    public sealed class BetterGrid : Control
+    public sealed class Wrap : Control
     {
-        static Grid dummygrid = new Grid();
-
         public static readonly DependencyProperty ChildrenProperty = DependencyProperty.Register(
           nameof(Children),
           typeof(UIElementCollection),
-          typeof(BetterGrid),
-          new PropertyMetadata(dummygrid.Children));
+          typeof(Wrap),
+          new PropertyMetadata(null));
 
         public UIElementCollection Children
         {
             get { return (UIElementCollection)GetValue(ChildrenProperty); }
             private set { SetValue(ChildrenProperty, value); }
         }
-        public BetterGrid()
+
+        public Wrap()
         {
-            this.DefaultStyleKey = typeof(BetterGrid);          
+            this.DefaultStyleKey = typeof(Wrap);
+            //instance Grid to get a UIElementCollection.  UIElementCollection has no exposed constructor.
+            Grid tempgrid = new Grid();
+            Children = tempgrid.Children;
+            tempgrid = null;
         }
 
         protected override void OnApplyTemplate()
         {
+            base.OnApplyTemplate();
+            //Get the Template Grid and Move the Children.
             if (GetTemplateChild("BaseG") is Grid gd)
-            {
+            {             
                 var clist = Children.ToList();
                 Children.Clear();
                 foreach (var item in clist)
@@ -46,7 +54,6 @@ namespace JWEasyTheme.Controls
                     gd.Children.Add(item);
                 }
                 Children = gd.Children;
-                dummygrid = null;
             }
         }
     }
