@@ -38,19 +38,100 @@ namespace JWEasyTheme
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            var resd = this.Resources.MergedDictionaries.ElementAt(0);
+            //var resd = this.Resources.MergedDictionaries.ElementAt(0);
             ColorTheme CTheme;
-            var lst = resd.Keys.ToList();
-            foreach (var item in lst)
-            {
-                CTheme = new ColorTheme()
-                {
-                    TName = item.ToString(),
-                    SCBrush = (SolidColorBrush)this.Resources[item.ToString()]
-                };
-                Source.Add(CTheme);
-            }
-            TList.ItemsSource = Source;
+            //var lst = resd.Values.ToList();
+            //var lst2 = resd.Keys.ToList();
+            //lst = lst.OrderBy(x => x);
+            //SCBrush = (SolidColorBrush)this.Resources[item.ToString()+"Brush"]
+            //var i = 0;
+            //foreach (var item in lst)
+            //{
+
+            //    var brsh = (SolidColorBrush)item;
+            //    CTheme = new ColorTheme()
+            //    {
+            //        TName = lst2.ElementAt(i).ToString(),
+            //        SCBrush = brsh
+
+            //    };
+            //    Source.Add(CTheme);
+            //    i++;
+            //}
+
+            //foreach (var item in SomeThemes)
+            //{
+            //    CTheme = new ColorTheme()
+            //    {
+            //        TName = item,
+            //        SCBrush = (SolidColorBrush)this.Resources[item]
+
+            //    };
+            //    Source.Add(CTheme);
+            //}
+            //TList.ItemsSource = Source;
+            //this.Bindings.Update();
         }
+
+        string[] SomeThemes =
+            {
+                    "SystemAltHighColor",
+                    "SystemAltLowColor",
+                    "SystemAltMediumColor",
+                    "SystemAltMediumHighColor",
+                    "SystemAltMediumLowColor",
+                    "SystemBaseHighColor",
+                    "SystemBaseLowColor",
+                    "SystemBaseMediumColor",
+                    "SystemBaseMediumHighColor",
+                    "SystemBaseMediumLowColor",
+                    "SystemChromeAltLowColor",
+                    "SystemChromeBlackHighColor",
+                    "SystemChromeBlackLowColor",
+                    "SystemChromeBlackMediumLowColor",
+                    "SystemChromeBlackMediumColor",
+                    "SystemChromeDisabledHighColor",
+                    "SystemChromeDisabledLowColor",
+                    "SystemChromeHighColor",
+                    "SystemChromeLowColor",
+                    "SystemChromeMediumColor",
+                    "SystemChromeMediumLowColor",
+                    "SystemChromeWhiteColor",
+                    "SystemChromeGrayColor",
+                    "SystemListLowColor",
+                    "SystemListMediumColor",
+                    "SystemErrorTextColor",
+                    "SystemChromeAltMediumHighColor",
+                    "SystemChromeAltHighColor",
+                    "SystemRevealAltHighColor",
+                    "SystemRevealAltLowColor",
+                    "SystemRevealAltMediumColor",
+                    "SystemRevealAltMediumHighColor",
+                    "SystemRevealAltMediumLowColor",
+                    "SystemRevealBaseHighColor",
+                    "SystemRevealBaseLowColor",
+                    "SystemRevealBaseMediumColor",
+                    "SystemRevealBaseMediumHighColor",
+                    "SystemRevealBaseMediumLowColor",
+                    "SystemRevealChromeAltLowColor",
+                    "SystemRevealChromeBlackHighColor",
+                    "SystemRevealChromeBlackLowColor",
+                    "SystemRevealChromeBlackMediumLowColor",
+                    "SystemRevealChromeBlackMediumColor",
+                    "SystemRevealChromeHighColor",
+                    "SystemRevealChromeLowColor",
+                    "SystemRevealChromeMediumColor",
+                    "SystemRevealChromeMediumLowColor",
+                    "SystemRevealChromeWhiteColor",
+                    "SystemRevealChromeGrayColor",
+                    "SystemRevealListLowColor",
+                    "SystemRevealListMediumColor",
+                    "SystemChromeMediumHighColor",
+                    "SystemColorControlAccentColor",
+                    "SystemAccentColor",
+                    "SystemListAccentLowColor",
+                    "SystemListAccentMediumColor",
+                    "SystemListAccentHighColor",
+            };
     }
 }

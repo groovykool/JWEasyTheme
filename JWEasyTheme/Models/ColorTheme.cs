@@ -11,8 +11,18 @@ namespace JWEasyTheme.Models
 {
     class ColorTheme : INotifyPropertyChanged
     {
-        public string TName = "Derp";
-        public SolidColorBrush SCBrush;
+        private string _TName;
+        public string TName
+        {
+            get { return _TName; }
+            set { Set(ref _TName, value, "TName"); }
+        }
+        private SolidColorBrush _SCBrush;
+        public SolidColorBrush SCBrush
+        {
+            get { return _SCBrush; }
+            set { Set(ref _SCBrush, value, "SCBrush"); }
+        }
 
 
         public event PropertyChangedEventHandler PropertyChanged;

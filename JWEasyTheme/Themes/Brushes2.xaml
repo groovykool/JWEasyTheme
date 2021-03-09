@@ -1,0 +1,23 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush
+        x:Key="SystemBaseHighColorBrush"
+        Color="{ThemeResource SystemBaseHighColor}" />
+    <SolidColorBrush
+        x:Key="SystemBaseLowColorBrush"
+        Color="{ThemeResource SystemBaseLowColor}" />
+    <SolidColorBrush
+        x:Key="SystemAltHighColorBrush"
+        Color="{ThemeResource SystemAltHighColor}" />
+    <SolidColorBrush
+        x:Key="SystemAltLowColorBrush"
+        Color="{ThemeResource SystemAltLowColor}" />
+    <SolidColorBrush
+        x:Key="SystemAltMediumColorBrush"
+        Color="{ThemeResource SystemAltMediumColor}" />
+    <SolidColorBrush
+        x:Key="SystemAltMediumHighColorBrush"
+        Color="{ThemeResource SystemAltMediumHighColor}" />
+    
+</ResourceDictionary>

@@ -8,17 +8,28 @@
     mc:Ignorable="d"
     xmlns:Models="using:JWEasyTheme.Models"
     xmlns:local="using:JWEasyTheme"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Page.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary
-                    Source="ms-appx:///Themes/Brushes.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Page.Resources>
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    RequestedTheme="Default">
+   
     <Grid
         x:Name="BaseGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="100" />
+            <RowDefinition
+                Height="100" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <local:Wrap RequestedTheme="Light" Grid.Row="0">
+            <Grid
+                Background="{ThemeResource SystemAltHighColor}" />
+        </local:Wrap>
+        <local:Wrap
+            RequestedTheme="Dark"
+            Grid.Row="1">
+            <Grid
+                Background="{ThemeResource SystemAltHighColor}" />
+        </local:Wrap>
         <ListView
             x:Name="TList"
             Grid.Row="2"
@@ -53,8 +64,8 @@
                     x:DataType="Models:ColorTheme">
                     <Grid
                         MinHeight="20"
-                        Padding="8,4,8,4"
-                        Margin="0,4,20,4"
+                        Padding="8"
+                        Margin="8"
                         BorderBrush="Gray"
                         BorderThickness="1"
                         CornerRadius="8">
@@ -81,7 +92,8 @@
                                 <TextBlock
                                     Grid.Column="0"
                                     Text="Default"
-                                    FontSize="16"
+                                    FontSize="20"
+                                    FontWeight="ExtraBold"
                                     Margin="12" />
                             </Grid>
                         </local:Wrap>
@@ -94,7 +106,8 @@
                                 <TextBlock
                                     Grid.Column="0"
                                     Text="Light"
-                                    FontSize="16"
+                                    FontSize="20"
+                                    FontWeight="ExtraBold"
                                     Margin="12" />
                             </Grid>
                         </local:Wrap>
@@ -107,7 +120,8 @@
                                 <TextBlock
                                     Grid.Column="0"
                                     Text="Dark"
-                                    FontSize="16"
+                                    FontSize="20"
+                                    FontWeight="ExtraBold"
                                     Margin="12" />
                             </Grid>
                         </local:Wrap>
