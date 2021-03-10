@@ -43,7 +43,7 @@ namespace JWEasyTheme
             //var lst = resd.Values.ToList();
             //var lst2 = resd.Keys.ToList();
             //lst = lst.OrderBy(x => x);
-            //SCBrush = (SolidColorBrush)this.Resources[item.ToString()+"Brush"]
+            //SCBrush = (SolidColorBrush)this.Resources[item.ToString() + "Brush"]
             //var i = 0;
             //foreach (var item in lst)
             //{
@@ -59,19 +59,30 @@ namespace JWEasyTheme
             //    i++;
             //}
 
-            //foreach (var item in SomeThemes)
-            //{
-            //    CTheme = new ColorTheme()
-            //    {
-            //        TName = item,
-            //        SCBrush = (SolidColorBrush)this.Resources[item]
+            foreach (var item in SomeThemes2)
+            {
+                var brsh = new SolidColorBrush((Color)Application.Current.Resources[item]);
+                CTheme = new ColorTheme()
+                {
+                    TName = item,
+                    SCBrush = brsh
 
-            //    };
-            //    Source.Add(CTheme);
-            //}
-            //TList.ItemsSource = Source;
+                };
+                Source.Add(CTheme);
+            }
+            TList.ItemsSource = Source;
             //this.Bindings.Update();
         }
+        string[] SomeThemes2 =
+            {
+                    "SystemAltHighColor",
+                    "SystemAltLowColor",
+                    "SystemAltMediumColor",
+                    "SystemAltMediumHighColor",
+                    "SystemAltMediumLowColor",
+                    "SystemBaseHighColor",
+                    "SystemBaseLowColor",
+            };
 
         string[] SomeThemes =
             {

@@ -2,22 +2,22 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <SolidColorBrush
-        x:Key="SystemBaseHighColorBrush"
+        x:Key="SystemBaseHighColorBrush1"
         Color="{ThemeResource SystemBaseHighColor}" />
     <SolidColorBrush
-        x:Key="SystemBaseLowColorBrush"
+        x:Key="SystemBaseLowColorBrush1"
         Color="{ThemeResource SystemBaseLowColor}" />
     <SolidColorBrush
-        x:Key="SystemAltHighColorBrush"
+        x:Key="SystemAltHighColorBrush1"
         Color="{ThemeResource SystemAltHighColor}" />
     <SolidColorBrush
-        x:Key="SystemAltLowColorBrush"
+        x:Key="SystemAltLowColorBrush1"
         Color="{ThemeResource SystemAltLowColor}" />
     <SolidColorBrush
-        x:Key="SystemAltMediumColorBrush"
+        x:Key="SystemAltMediumColorBrush1"
         Color="{ThemeResource SystemAltMediumColor}" />
     <SolidColorBrush
-        x:Key="SystemAltMediumHighColorBrush"
+        x:Key="SystemAltMediumHighColorBrush1"
         Color="{ThemeResource SystemAltMediumHighColor}" />
     
 </ResourceDictionary>

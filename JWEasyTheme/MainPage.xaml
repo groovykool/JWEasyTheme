@@ -10,14 +10,17 @@
     xmlns:local="using:JWEasyTheme"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     RequestedTheme="Default">
-   
     <Grid
         x:Name="BaseGrid">
         <Grid.RowDefinitions>
             <RowDefinition
-                Height="100" />
+                Height="50" />
             <RowDefinition
-                Height="100" />
+                Height="50" />
+            <RowDefinition
+                Height="50" />
+            <RowDefinition
+                Height="50" />
             <RowDefinition />
         </Grid.RowDefinitions>
         <local:Wrap RequestedTheme="Light" Grid.Row="0">
@@ -30,9 +33,21 @@
             <Grid
                 Background="{ThemeResource SystemAltHighColor}" />
         </local:Wrap>
+        <local:Wrap
+            RequestedTheme="Light"
+            Grid.Row="2">
+            <Grid
+                Background="{ThemeResource SystemAltLowColor}" />
+        </local:Wrap>
+        <local:Wrap
+            RequestedTheme="Dark"
+            Grid.Row="3">
+            <Grid
+                Background="{ThemeResource SystemAltLowColor}" />
+        </local:Wrap>
         <ListView
             x:Name="TList"
-            Grid.Row="2"
+            Grid.Row="4"
             Grid.RowSpan="5"
             Header="UWP Theme Brushes"
             MinHeight="40"
@@ -88,7 +103,7 @@
                             Grid.Column="1"
                             Margin="4">
                             <Grid
-                                Background="{x:Bind SCBrush,Mode=OneTime}">
+                                Background="{x:Bind SCBrush,Mode=OneWay}">
                                 <TextBlock
                                     Grid.Column="0"
                                     Text="Default"
@@ -102,7 +117,7 @@
                             Grid.Column="2"
                             Margin="4">
                             <Grid
-                                Background="{x:Bind SCBrush,Mode=OneTime}">
+                                Background="{x:Bind SCBrush,Mode=OneWay}">
                                 <TextBlock
                                     Grid.Column="0"
                                     Text="Light"
@@ -116,7 +131,7 @@
                             Grid.Column="3"
                             Margin="4">
                             <Grid
-                                Background="{x:Bind SCBrush,Mode=OneTime}">
+                                Background="{x:Bind SCBrush,Mode=OneWay}">
                                 <TextBlock
                                     Grid.Column="0"
                                     Text="Dark"
