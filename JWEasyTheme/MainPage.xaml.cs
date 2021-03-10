@@ -59,39 +59,39 @@ namespace JWEasyTheme
             //    i++;
             //}
 
-            foreach (var item in SomeThemes3)
-            {
-                //var brsh = new SolidColorBrush((Color)Application.Current.Resources[item]);
-                var brsh = (SolidColorBrush)this.Resources[item];
-                CTheme = new ColorTheme()
-                {
-                    TName = item,
-                    SCBrush = brsh
+            //foreach (var item in SomeThemes3)
+            //{
+            //    //var brsh = new SolidColorBrush((Color)Application.Current.Resources[item]);
+            //    var brsh = (SolidColorBrush)this.Resources[item];
+            //    CTheme = new ColorTheme()
+            //    {
+            //        TName = item,
+            //        SCBrush = brsh
 
-                };
-                Source.Add(CTheme);
-            }
-            var resd = this.Resources.MergedDictionaries.ElementAt(0);
+            //    };
+            //    Source.Add(CTheme);
+            //}
+            //var resd = this.Resources.MergedDictionaries.ElementAt(0);
 
-            var lst = resd.Values.ToList();
-            var lst2 = resd.Keys.ToList();
-            //lst = lst.OrderBy(x => x);
-            //var brsh = (SolidColorBrush)this.Resources[]
-            var i = 0;
-            foreach (var item in lst)
-            {
+            //var lst = resd.Values.ToList();
+            //var lst2 = resd.Keys.ToList();
+            ////lst = lst.OrderBy(x => x);
+            ////var brsh = (SolidColorBrush)this.Resources[]
+            //var i = 0;
+            //foreach (var item in lst)
+            //{
 
-                var brsh = (SolidColorBrush)item;
-                CTheme = new ColorTheme()
-                {
-                    TName = (string)lst2.ElementAt(i),
-                    SCBrush = brsh
+            //    var brsh = (SolidColorBrush)item;
+            //    CTheme = new ColorTheme()
+            //    {
+            //        TName = (string)lst2.ElementAt(i),
+            //        SCBrush = brsh
 
-                };
-                Source.Add(CTheme);
-                i++;
-            }
-            TList.ItemsSource = Source;
+            //    };
+            //    Source.Add(CTheme);
+            //    i++;
+            //}
+            //TList.ItemsSource = Source;
             
         }
         string[] SomeThemes2 =
@@ -112,58 +112,34 @@ namespace JWEasyTheme
 
         string[] SomeThemes =
             {
-                    "SystemAltHighColor",
-                    "SystemAltLowColor",
-                    "SystemAltMediumColor",
-                    "SystemAltMediumHighColor",
+                    
+                    
+                    
+                   
                     "SystemAltMediumLowColor",
-                    "SystemBaseHighColor",
-                    "SystemBaseLowColor",
-                    "SystemBaseMediumColor",
-                    "SystemBaseMediumHighColor",
+                    
+                    
+                   
+                    
                     "SystemBaseMediumLowColor",
-                    "SystemChromeAltLowColor",
+                    
                     "SystemChromeBlackHighColor",
                     "SystemChromeBlackLowColor",
                     "SystemChromeBlackMediumLowColor",
                     "SystemChromeBlackMediumColor",
                     "SystemChromeDisabledHighColor",
                     "SystemChromeDisabledLowColor",
-                    "SystemChromeHighColor",
-                    "SystemChromeLowColor",
-                    "SystemChromeMediumColor",
+                    
+                    
+                    
                     "SystemChromeMediumLowColor",
                     "SystemChromeWhiteColor",
                     "SystemChromeGrayColor",
                     "SystemListLowColor",
                     "SystemListMediumColor",
                     "SystemErrorTextColor",
-                    "SystemChromeAltMediumHighColor",
-                    "SystemChromeAltHighColor",
-                    "SystemRevealAltHighColor",
-                    "SystemRevealAltLowColor",
-                    "SystemRevealAltMediumColor",
-                    "SystemRevealAltMediumHighColor",
-                    "SystemRevealAltMediumLowColor",
-                    "SystemRevealBaseHighColor",
-                    "SystemRevealBaseLowColor",
-                    "SystemRevealBaseMediumColor",
-                    "SystemRevealBaseMediumHighColor",
-                    "SystemRevealBaseMediumLowColor",
-                    "SystemRevealChromeAltLowColor",
-                    "SystemRevealChromeBlackHighColor",
-                    "SystemRevealChromeBlackLowColor",
-                    "SystemRevealChromeBlackMediumLowColor",
-                    "SystemRevealChromeBlackMediumColor",
-                    "SystemRevealChromeHighColor",
-                    "SystemRevealChromeLowColor",
-                    "SystemRevealChromeMediumColor",
-                    "SystemRevealChromeMediumLowColor",
-                    "SystemRevealChromeWhiteColor",
-                    "SystemRevealChromeGrayColor",
-                    "SystemRevealListLowColor",
-                    "SystemRevealListMediumColor",
-                    "SystemChromeMediumHighColor",
+                    
+                    
                     "SystemColorControlAccentColor",
                     "SystemAccentColor",
                     "SystemListAccentLowColor",

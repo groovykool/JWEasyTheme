@@ -11,152 +11,1532 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     RequestedTheme="Default"
     Loaded="MP_Loaded">
-    <Page.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary
-                    Source="ms-appx:///Themes/Brushes2.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-            <SolidColorBrush
-                x:Key="Brush1"
-                Color="{ThemeResource SystemAltHighColor}" />
-        </ResourceDictionary>
-    </Page.Resources>
-    <Grid
-        x:Name="BaseGrid">
-        <Grid.RowDefinitions>
-            <RowDefinition
-                Height="50" />
-            <RowDefinition
-                Height="50" />
-            <RowDefinition
-                Height="50" />
-            <RowDefinition
-                Height="50" />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <local:Wrap
-            RequestedTheme="Light"
-            Grid.Row="0">
+    <ScrollViewer>
+        <Grid
+            x:Name="BaseGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="100" />
+                <RowDefinition
+                    Height="100" />
+                <RowDefinition
+                    Height="100" />
+                <RowDefinition
+                    Height="100" />
+                <RowDefinition
+                    Height="100" />
+                <RowDefinition
+                    Height="100" />
+                <RowDefinition
+                    Height="100" />
+                <RowDefinition
+                    Height="100" />
+                <RowDefinition
+                    Height="100" />
+                <RowDefinition
+                    Height="100" />
+                <RowDefinition
+                    Height="100" />
+                <RowDefinition
+                    Height="100" />
+                <RowDefinition
+                    Height="100" />
+                <RowDefinition
+                    Height="100" />
+                <RowDefinition
+                    Height="100" />
+                <RowDefinition
+                    Height="100" />
+            </Grid.RowDefinitions>
+
+            <!--Copy Start -->
             <Grid
-                Background="{ThemeResource SystemAltHighColor}" />
-        </local:Wrap>
-        <local:Wrap
-            RequestedTheme="Dark"
-            Grid.Row="1">
-            <Grid
-                Background="{ThemeResource SystemAltHighColor}" />
-        </local:Wrap>
-        <local:Wrap
-            RequestedTheme="Light"
-            Grid.Row="2">
-            <Grid
-                Background="{ThemeResource SystemAltLowColor}" />
-        </local:Wrap>
-        <local:Wrap
-            RequestedTheme="Dark"
-            Grid.Row="3">
-            <Grid
-                Background="{ThemeResource SystemAltMediumColor}" />
-        </local:Wrap>
-        <ListView
-            x:Name="TList"
-            Grid.Row="4"
-            Grid.RowSpan="5"
-            Header="UWP Theme Brushes"
-            MinHeight="40"
-            CornerRadius="8"
-            Margin="4,8,4,4">
-            <ListView.ItemContainerStyle>
-                <Style
-                    TargetType="ListViewItem">
-                    <Setter
-                        Property="HorizontalAlignment"
-                        Value="Stretch" />
-                    <Setter
-                        Property="HorizontalContentAlignment"
-                        Value="Stretch" />
-                    <Setter
-                        Property="Padding"
-                        Value="0" />
-                    <Setter
-                        Property="MinHeight"
-                        Value="40" />
-                    <Setter
-                        Property="CornerRadius"
-                        Value="8" />
-                </Style>
-            </ListView.ItemContainerStyle>
-            <ListView.ItemTemplate>
-                <DataTemplate
-                    x:Name="TwoLineDataTemplate"
-                    x:DataType="Models:ColorTheme">
-                    <Grid
-                        MinHeight="20"
-                        Padding="8"
-                        Margin="8"
-                        BorderBrush="Gray"
-                        BorderThickness="1"
-                        CornerRadius="8">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition
-                                Width="300" />
-                            <ColumnDefinition
-                                Width="*" />
-                            <ColumnDefinition
-                                Width="*" />
-                            <ColumnDefinition
-                                Width="*" />
-                        </Grid.ColumnDefinitions>
+                Padding="4"
+                Grid.Row="0"
+                Margin="4"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:Wrap
+                    RequestedTheme="Default"
+                    Grid.Column="0"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemBaseHighColor}">
                         <TextBlock
                             Grid.Column="0"
-                            Text="{x:Bind TName,Mode=OneTime}"
-                            Margin="12" />
-                        <local:Wrap
-                            RequestedTheme="Default"
-                            Grid.Column="1"
-                            Margin="4">
-                            <Grid
-                                Background="{x:Bind SCBrush,Mode=OneWay}">
-                                <TextBlock
-                                    Grid.Column="0"
-                                    Text="Default"
-                                    FontSize="20"
-                                    FontWeight="ExtraBold"
-                                    Margin="12" />
-                            </Grid>
-                        </local:Wrap>
-                        <local:Wrap
-                            RequestedTheme="Light"
-                            Grid.Column="2"
-                            Margin="4">
-                            <Grid
-                                Background="{x:Bind SCBrush,Mode=OneWay}">
-                                <TextBlock
-                                    Grid.Column="0"
-                                    Text="Light"
-                                    FontSize="20"
-                                    FontWeight="ExtraBold"
-                                    Margin="12" />
-                            </Grid>
-                        </local:Wrap>
-                        <local:Wrap
-                            RequestedTheme="Dark"
-                            Grid.Column="3"
-                            Margin="4">
-                            <Grid
-                                Background="{x:Bind SCBrush,Mode=OneWay}">
-                                <TextBlock
-                                    Grid.Column="0"
-                                    Text="Dark"
-                                    FontSize="20"
-                                    FontWeight="ExtraBold"
-                                    Margin="12" />
-                            </Grid>
-                        </local:Wrap>
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </Grid>
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemBaseHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemBaseHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Light"
+                    Grid.Column="1"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemBaseHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemBaseHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemBaseHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Dark"
+                    Grid.Column="2"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemBaseHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemBaseHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemBaseHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+            </Grid>
+            <!--Copy End -->
+            <!--Copy Start -->
+            <Grid
+                Padding="4"
+                Grid.Row="1"
+                Margin="4"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:Wrap
+                    RequestedTheme="Default"
+                    Grid.Column="0"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemAltHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemAltHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemAltHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Light"
+                    Grid.Column="1"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemAltHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemAltHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemAltHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Dark"
+                    Grid.Column="2"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemAltHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemAltHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemAltHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+            </Grid>
+            <!--Copy End -->
+            <!--Copy Start -->
+            <Grid
+                Padding="4"
+                Grid.Row="2"
+                Margin="4"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:Wrap
+                    RequestedTheme="Default"
+                    Grid.Column="0"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemChromeHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemChromeHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Light"
+                    Grid.Column="1"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemChromeHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemChromeHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Dark"
+                    Grid.Column="3"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemChromeHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemChromeHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+            </Grid>
+            <!--Copy End -->
+            <!--Copy Start -->
+            <Grid
+                Padding="4"
+                Grid.Row="3"
+                Margin="4"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:Wrap
+                    RequestedTheme="Default"
+                    Grid.Column="0"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeAltHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemChromeAltHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemChromeAltHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Light"
+                    Grid.Column="1"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeAltHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemChromeAltHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemChromeAltHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Dark"
+                    Grid.Column="2"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeAltHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemChromeAltHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemChromeAltHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+            </Grid>
+            <!--Copy End -->
+            <!--Copy Start -->
+            <Grid
+                Padding="4"
+                Grid.Row="4"
+                Margin="4"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:Wrap
+                    RequestedTheme="Default"
+                    Grid.Column="0"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemBaseMediumColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemBaseMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemBaseMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Light"
+                    Grid.Column="1"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemBaseMediumColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemBaseMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemBaseMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Dark"
+                    Grid.Column="2"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemBaseMediumColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemBaseMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemBaseMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+            </Grid>
+            <!--Copy End -->
+            <!--Copy Start -->
+            <Grid
+                Padding="4"
+                Grid.Row="5"
+                Margin="4"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:Wrap
+                    RequestedTheme="Default"
+                    Grid.Column="0"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemAltMediumColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemAltMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemAltMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Light"
+                    Grid.Column="1"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemAltMediumColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemAltMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemAltMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Dark"
+                    Grid.Column="2"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemAltMediumColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemAltMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemAltMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+            </Grid>
+            <!--Copy End -->
+            <!--Copy Start -->
+            <Grid
+                Padding="4"
+                Grid.Row="6"
+                Margin="4"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:Wrap
+                    RequestedTheme="Default"
+                    Grid.Column="0"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeMediumColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemChromeMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemChromeMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Light"
+                    Grid.Column="1"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeMediumColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemChromeMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemChromeMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Dark"
+                    Grid.Column="3"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeMediumColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemChromeMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemChromeMediumColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+            </Grid>
+            <!--Copy End -->
+            <!--Copy Start -->
+            <Grid
+                Padding="4"
+                Grid.Row="7"
+                Margin="4"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:Wrap
+                    RequestedTheme="Default"
+                    Grid.Column="0"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemBaseLowColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemBaseLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemBaseLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Light"
+                    Grid.Column="1"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemBaseLowColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemBaseLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemBaseLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Dark"
+                    Grid.Column="2"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemBaseLowColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemBaseLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemBaseLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+            </Grid>
+            <!--Copy End -->
+            <!--Copy Start -->
+            <Grid
+                Padding="4"
+                Grid.Row="8"
+                Margin="4"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:Wrap
+                    RequestedTheme="Default"
+                    Grid.Column="0"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemAltLowColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemAltLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemAltLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Light"
+                    Grid.Column="1"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemAltLowColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemAltLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemAltLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Dark"
+                    Grid.Column="2"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemAltLowColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemAltLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemAltLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+            </Grid>
+            <!--Copy End -->
+            <!--Copy Start -->
+            <Grid
+                Padding="4"
+                Grid.Row="9"
+                Margin="4"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:Wrap
+                    RequestedTheme="Default"
+                    Grid.Column="0"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeLowColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemChromeLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemChromeLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Light"
+                    Grid.Column="1"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeLowColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemChromeLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemChromeLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Dark"
+                    Grid.Column="2"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeLowColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemChromeLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemChromeLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+            </Grid>
+            <!--Copy End -->
+            <!--Copy Start -->
+            <Grid
+                Padding="4"
+                Grid.Row="10"
+                Margin="4"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:Wrap
+                    RequestedTheme="Default"
+                    Grid.Column="0"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeAltLowColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemChromeAltLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemChromeAltLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Light"
+                    Grid.Column="1"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeAltLowColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemChromeAltLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemChromeAltLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Dark"
+                    Grid.Column="3"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeAltLowColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemChromeAltLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemChromeAltLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+            </Grid>
+            <!--Copy End -->
+            <!--Copy Start -->
+            <Grid
+                Padding="4"
+                Grid.Row="11"
+                Margin="4"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:Wrap
+                    RequestedTheme="Default"
+                    Grid.Column="0"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemBaseMediumHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemBaseMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemBaseMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Light"
+                    Grid.Column="1"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemBaseMediumHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemBaseMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemBaseMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Dark"
+                    Grid.Column="2"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemBaseMediumHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemBaseMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemBaseMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+            </Grid>
+            <!--Copy End -->
+            <!--Copy Start -->
+            <Grid
+                Padding="4"
+                Grid.Row="12"
+                Margin="4"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:Wrap
+                    RequestedTheme="Default"
+                    Grid.Column="0"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemAltMediumHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemAltMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemAltMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Light"
+                    Grid.Column="1"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemAltMediumHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemAltMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemAltMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Dark"
+                    Grid.Column="2"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemAltMediumHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemAltMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemAltMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+            </Grid>
+            <!--Copy End -->
+            <!--Copy Start -->
+            <Grid
+                Padding="4"
+                Grid.Row="13"
+                Margin="4"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:Wrap
+                    RequestedTheme="Default"
+                    Grid.Column="0"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeMediumHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemChromeMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemChromeMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Light"
+                    Grid.Column="1"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeMediumHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemChromeMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemChromeMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Dark"
+                    Grid.Column="2"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeMediumHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemChromeMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemChromeMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+            </Grid>
+            <!--Copy End -->
+            <!--Copy Start -->
+            <Grid
+                Padding="4"
+                Grid.Row="14"
+                Margin="4"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:Wrap
+                    RequestedTheme="Default"
+                    Grid.Column="0"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeAltMediumHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemChromeAltMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemChromeAltMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Light"
+                    Grid.Column="1"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeAltMediumHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemChromeAltMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemChromeAltMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Dark"
+                    Grid.Column="3"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemChromeAltMediumHighColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemChromeAltMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemChromeAltMediumHighColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+            </Grid>
+            <!--Copy End -->
+            <!--Copy Start -->
+            <Grid
+                Padding="4"
+                Grid.Row="15"
+                Margin="4"
+                BorderBrush="Gray"
+                BorderThickness="2"
+                CornerRadius="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                    <ColumnDefinition
+                        Width="*" />
+                </Grid.ColumnDefinitions>
+                <local:Wrap
+                    RequestedTheme="Default"
+                    Grid.Column="0"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemBaseMediumLowColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemBaseMediumLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Default:SystemBaseMediumLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Light"
+                    Grid.Column="1"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemBaseMediumLowColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemBaseMediumLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Light:SystemBaseMediumLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+                <local:Wrap
+                    RequestedTheme="Dark"
+                    Grid.Column="2"
+                    Margin="4,2,4,2">
+                    <StackPanel
+                        Orientation="Vertical"
+                        HorizontalAlignment="Stretch"
+                        Background="{ThemeResource SystemBaseMediumLowColor}">
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemBaseMediumLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Margin="4" />
+                        <TextBlock
+                            Grid.Column="0"
+                            HorizontalAlignment="Center"
+                            Text="Dark:SystemBaseMediumLowColor"
+                            FontSize="16"
+                            FontWeight="ExtraBold"
+                            Foreground="Red"
+                            Margin="4" />
+                    </StackPanel>
+                </local:Wrap>
+            </Grid>
+            <!--Copy End -->
+        </Grid>
+    </ScrollViewer>
 </Page>
