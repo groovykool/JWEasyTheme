@@ -9,7 +9,19 @@
     xmlns:Models="using:JWEasyTheme.Models"
     xmlns:local="using:JWEasyTheme"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    RequestedTheme="Default">
+    RequestedTheme="Default"
+    Loaded="MP_Loaded">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="ms-appx:///Themes/Brushes2.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <SolidColorBrush
+                x:Key="Brush1"
+                Color="{ThemeResource SystemAltHighColor}" />
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid
         x:Name="BaseGrid">
         <Grid.RowDefinitions>
@@ -23,7 +35,9 @@
                 Height="50" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <local:Wrap RequestedTheme="Light" Grid.Row="0">
+        <local:Wrap
+            RequestedTheme="Light"
+            Grid.Row="0">
             <Grid
                 Background="{ThemeResource SystemAltHighColor}" />
         </local:Wrap>
@@ -43,7 +57,7 @@
             RequestedTheme="Dark"
             Grid.Row="3">
             <Grid
-                Background="{ThemeResource SystemAltLowColor}" />
+                Background="{ThemeResource SystemAltMediumColor}" />
         </local:Wrap>
         <ListView
             x:Name="TList"

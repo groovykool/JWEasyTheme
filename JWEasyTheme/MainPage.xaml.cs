@@ -59,9 +59,10 @@ namespace JWEasyTheme
             //    i++;
             //}
 
-            foreach (var item in SomeThemes2)
+            foreach (var item in SomeThemes3)
             {
-                var brsh = new SolidColorBrush((Color)Application.Current.Resources[item]);
+                //var brsh = new SolidColorBrush((Color)Application.Current.Resources[item]);
+                var brsh = (SolidColorBrush)this.Resources[item];
                 CTheme = new ColorTheme()
                 {
                     TName = item,
@@ -70,8 +71,28 @@ namespace JWEasyTheme
                 };
                 Source.Add(CTheme);
             }
+            var resd = this.Resources.MergedDictionaries.ElementAt(0);
+
+            var lst = resd.Values.ToList();
+            var lst2 = resd.Keys.ToList();
+            //lst = lst.OrderBy(x => x);
+            //var brsh = (SolidColorBrush)this.Resources[]
+            var i = 0;
+            foreach (var item in lst)
+            {
+
+                var brsh = (SolidColorBrush)item;
+                CTheme = new ColorTheme()
+                {
+                    TName = (string)lst2.ElementAt(i),
+                    SCBrush = brsh
+
+                };
+                Source.Add(CTheme);
+                i++;
+            }
             TList.ItemsSource = Source;
-            //this.Bindings.Update();
+            
         }
         string[] SomeThemes2 =
             {
@@ -82,6 +103,11 @@ namespace JWEasyTheme
                     "SystemAltMediumLowColor",
                     "SystemBaseHighColor",
                     "SystemBaseLowColor",
+            };
+        string[] SomeThemes3 =
+           {
+                    "Brush1",
+                    
             };
 
         string[] SomeThemes =
@@ -144,5 +170,10 @@ namespace JWEasyTheme
                     "SystemListAccentMediumColor",
                     "SystemListAccentHighColor",
             };
+
+        private void MP_Loaded(object sender, RoutedEventArgs e)
+        {
+           
+        }
     }
 }
