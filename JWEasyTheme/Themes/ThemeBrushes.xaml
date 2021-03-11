@@ -1,0 +1,44 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary
+            x:Key="Light">
+            <SolidColorBrush
+                x:Key="TWBack1"
+                Color="#ffdddddd" />
+            <SolidColorBrush
+                x:Key="TWBack2"
+                Color="#ffbbbbbb" />
+            <SolidColorBrush
+                x:Key="TWRed1"
+                Color="#ffffcccc" />
+            <SolidColorBrush
+                x:Key="TWRed2"
+                Color="#ffffb3b3" />
+            <SolidColorBrush
+                x:Key="TWRed3"
+                Color="#ffff9999" />
+        </ResourceDictionary>
+        <ResourceDictionary
+            x:Key="Dark">
+            <SolidColorBrush
+                x:Key="TWBack1"
+                Color="#ff222222" />
+            <SolidColorBrush
+                x:Key="TWBack2"
+                Color="#ff444444" />
+            <SolidColorBrush
+                x:Key="TWRed1"
+                Color="#ffff0000" />
+            <SolidColorBrush
+                x:Key="TWRed2"
+                Color="#ffdd0000" />
+            <SolidColorBrush
+                x:Key="TWRed3"
+                Color="#ffbb0000" />
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+
+</ResourceDictionary>

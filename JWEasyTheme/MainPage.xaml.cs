@@ -38,77 +38,9 @@ namespace JWEasyTheme
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            //var resd = this.Resources.MergedDictionaries.ElementAt(0);
-            ColorTheme CTheme;
-            //var lst = resd.Values.ToList();
-            //var lst2 = resd.Keys.ToList();
-            //lst = lst.OrderBy(x => x);
-            //SCBrush = (SolidColorBrush)this.Resources[item.ToString() + "Brush"]
-            //var i = 0;
-            //foreach (var item in lst)
-            //{
-
-            //    var brsh = (SolidColorBrush)item;
-            //    CTheme = new ColorTheme()
-            //    {
-            //        TName = lst2.ElementAt(i).ToString(),
-            //        SCBrush = brsh
-
-            //    };
-            //    Source.Add(CTheme);
-            //    i++;
-            //}
-
-            //foreach (var item in SomeThemes3)
-            //{
-            //    //var brsh = new SolidColorBrush((Color)Application.Current.Resources[item]);
-            //    var brsh = (SolidColorBrush)this.Resources[item];
-            //    CTheme = new ColorTheme()
-            //    {
-            //        TName = item,
-            //        SCBrush = brsh
-
-            //    };
-            //    Source.Add(CTheme);
-            //}
-            //var resd = this.Resources.MergedDictionaries.ElementAt(0);
-
-            //var lst = resd.Values.ToList();
-            //var lst2 = resd.Keys.ToList();
-            ////lst = lst.OrderBy(x => x);
-            ////var brsh = (SolidColorBrush)this.Resources[]
-            //var i = 0;
-            //foreach (var item in lst)
-            //{
-
-            //    var brsh = (SolidColorBrush)item;
-            //    CTheme = new ColorTheme()
-            //    {
-            //        TName = (string)lst2.ElementAt(i),
-            //        SCBrush = brsh
-
-            //    };
-            //    Source.Add(CTheme);
-            //    i++;
-            //}
-            //TList.ItemsSource = Source;
-            
+           
         }
-        string[] SomeThemes2 =
-            {
-                    "SystemAltHighColor",
-                    "SystemAltLowColor",
-                    "SystemAltMediumColor",
-                    "SystemAltMediumHighColor",
-                    "SystemAltMediumLowColor",
-                    "SystemBaseHighColor",
-                    "SystemBaseLowColor",
-            };
-        string[] SomeThemes3 =
-           {
-                    "Brush1",
-                    
-            };
+        
 
         string[] SomeThemes =
             {
@@ -123,21 +55,14 @@ namespace JWEasyTheme
                     
                     
                     
-                    "SystemChromeBlackHighColor",
-                    "SystemChromeBlackLowColor",
-                    "SystemChromeBlackMediumLowColor",
-                    "SystemChromeBlackMediumColor",
-                    "SystemChromeDisabledHighColor",
-                    "SystemChromeDisabledLowColor",
+                   
+                    
+                   
                     
                     
                     
                     
-                    "SystemChromeWhiteColor",
-                    "SystemChromeGrayColor",
-   
-                    
-                    "SystemErrorTextColor",
+                   
                     
                     
                     "SystemColorControlAccentColor",
