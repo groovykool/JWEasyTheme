@@ -8,8 +8,8 @@
     mc:Ignorable="d"
     xmlns:Models="using:JWEasyTheme.Models"
     xmlns:local="using:JWEasyTheme"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     RequestedTheme="Default"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     Loaded="MP_Loaded">
     <Page.Resources>
         <ResourceDictionary>

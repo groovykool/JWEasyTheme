@@ -5,9 +5,7 @@
 
     <Style
         TargetType="local:Wrap">
-        <Setter
-            Property="Background"
-            Value="{ThemeResource SystemControlHighlightChromeHighBrush}"></Setter>
+        
         <Setter
             Property="Template">
             <Setter.Value>
