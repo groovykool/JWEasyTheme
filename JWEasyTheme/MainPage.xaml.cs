@@ -116,12 +116,12 @@ namespace JWEasyTheme
                     
                     
                    
-                    "SystemAltMediumLowColor",
+                    
                     
                     
                    
                     
-                    "SystemBaseMediumLowColor",
+                    
                     
                     "SystemChromeBlackHighColor",
                     "SystemChromeBlackLowColor",
@@ -132,19 +132,19 @@ namespace JWEasyTheme
                     
                     
                     
-                    "SystemChromeMediumLowColor",
+                    
                     "SystemChromeWhiteColor",
                     "SystemChromeGrayColor",
-                    "SystemListLowColor",
-                    "SystemListMediumColor",
+   
+                    
                     "SystemErrorTextColor",
                     
                     
                     "SystemColorControlAccentColor",
-                    "SystemAccentColor",
-                    "SystemListAccentLowColor",
-                    "SystemListAccentMediumColor",
-                    "SystemListAccentHighColor",
+                   
+                    
+                   
+                    
             };
 
         private void MP_Loaded(object sender, RoutedEventArgs e)
